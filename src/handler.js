@@ -111,6 +111,13 @@ const deleteNoteByIdHandler = (request, h) => {
     response.code(200);
     return response;
   }
+
+  const response = h.response({
+    status: 'fail',
+    message: 'Gagal memperbarui catatan. Id tidak ditemukan',
+  });
+  response.code(404);
+  return response;
 };
 
 module.exports = {
